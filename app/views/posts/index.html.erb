@@ -1,1 +1,51 @@
-hello
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sample</title>
+  <style type="text/css" href="./style.css"></style>
+
+    <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+</head>
+<body>
+
+<nav>
+  <div class="nav-wrapper">
+    <a href="#" class="brand-logo">Logo</a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li><a href="sass.html">Sass</a></li>
+      <li><a href="badges.html">Components</a></li>
+      <li><a href="collapsible.html">JavaScript</a></li>
+    </ul>
+  </div>
+</nav>
+
+  <div class="col s12 m7">
+  <% @posts.each do |post|%>
+    <h3 class="header">
+      <%= post.name%>
+    </h3>
+    <div class="card horizontal">
+      <div class="card-image">
+        <img src=<%= post.image %>>
+      </div>
+      <div class="card-stacked">
+        <div class="card-content">
+          <p>
+            <%= post.text%>
+          </p>
+        </div>
+        <div class="card-action">
+          <a href="#">This is a link</a>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+
+<script type="text/javascript" src="./app.js"></script>
+</body>
+</html>
