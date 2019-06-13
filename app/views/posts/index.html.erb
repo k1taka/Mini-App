@@ -1,18 +1,3 @@
-<nav>
-  <div class="nav-wrapper">
-    <a href="#" class="brand-logo">Logo</a>
-    <ul id="nav-mobile" class="right hide-on-med-and-down">
-      <% if user_signed_in? %>
-      <li><%= link_to "New", new_post_path,class: 'post' %></li>
-      <li><%= link_to "Sign out", destroy_user_session_path, method: :delete  %></li>
-      <% else %>
-      <li><%= link_to "Sign in", new_user_session_path,class: 'post' %></li>
-      <li><%= link_to "Sign up", new_user_registration_path,class: 'post' %><a href="badges.html">Sign up</a></li>
-      <% end %>
-    </ul>
-  </div>
-</nav>
-
   <div class="col s12 m7">
   <% @posts.each do |post|%>
     <h3 class="header">
