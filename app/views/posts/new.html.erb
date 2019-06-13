@@ -1,0 +1,21 @@
+<%= form_for(@post) do |f| %>
+
+ <%= f.text_field :name,placeholder:" 名前を入力してください"  %>
+
+  <div class="row">
+  <div class="input-field col s6">
+    <%= f.text_field :image,id:"first_name2",type: "text",class:"validate",placeholder:" 画像のURLを入力してください" %>
+    <label class="active" for="first_name2"></label>
+  </div>
+</div>
+
+  <div class="row">
+    <div class="input-field col s12">
+      <%= f.text_field :text,id:"first_name2",type:"text",id:"textarea1",class:"materialize-textarea",placeholder:" 紹介文を入力してください" %>
+      <label for="textarea1"></label>
+    </div>
+  </div>
+
+  <%= f.submit %>
+        
+<% end %>
