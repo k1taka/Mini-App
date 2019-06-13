@@ -12,13 +12,14 @@ class PostsController < ApplicationController
 
   def create
     Post.create(post_params)
-    redirect_to root_path
+
+    # redirect_to root_path
   end
 
   def destroy
     post = Post.find(params[:id])
     post.destroy if post.user_id == current_user.id
-    redirect_to root_path
+    # redirect_to root_path
   end
 
   def edit
