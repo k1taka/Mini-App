@@ -24,15 +24,26 @@
       </div>
       <div class="card-stacked">
         <div class="card-content">
-          <p>
+
             <%= post.text%>
           </p>
         </div>
         <div class="card-action">
           <a href="#">This is a link</a>
+          
+          <%if user_signed_in? && current_user.id == post.user_id %>
+          <ul class="more_list">
+            <li>
+          <%= link_to '削除', "/posts/#{post.id}", method: :delete %>
+            </li>
+          </ul>
+          <% end %>
+
+
         </div>
       </div>
     </div>
     <% end %>
     <%= paginate(@posts) %>
   </div>
+

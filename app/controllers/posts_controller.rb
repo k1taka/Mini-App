@@ -15,10 +15,15 @@ class PostsController < ApplicationController
     redirect_to root_path
   end
 
+  def destroy
+    post = Post.find(params[:id])
+    post.destroy if post.user_id == current_user.id
+    redirect_to root_path
+  end
 
   private
   def post_params
-    params.require(:post).permit(:name, :image, :text)
+    params.require(:post).permit(:name, :image, :text).merge(user_id: current_user.id)
   end
 
   def move_to_index
