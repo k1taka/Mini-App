@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
 
+  before_action :move_to_index,except: :index
+
   def index
     @posts = Post.all.order("id DESC").page(params[:page]).per(5)
   end
@@ -17,6 +19,10 @@ class PostsController < ApplicationController
   private
   def post_params
     params.require(:post).permit(:name, :image, :text)
+  end
+
+  def move_to_index
+    redirect_to action: :index  unless user_signed_in?
   end
 
 end
