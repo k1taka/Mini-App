@@ -1,6 +1,6 @@
-    <h3 class="header">
+    <h5 class="header">
       <%= post.name%>
-    </h3>
+    </h5>
     <div class="card horizontal">
       <div class="card-image">
         <img src=<%= post.image %>>
@@ -12,7 +12,7 @@
           </p>
         </div>
         <div class="card-action">
-          <a href="#">This is a link</a>
+          <%# <a href="#">This is a link</a> %>
           
           <%if user_signed_in? && current_user.id == post.user_id %>
           <ul class="more_list">

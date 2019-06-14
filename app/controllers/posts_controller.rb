@@ -25,8 +25,7 @@ class PostsController < ApplicationController
 
   def update
     post = Post.find(params[:id])
-    post.update(post_params) if post.user_id == current_user.id
-    redirect_to root_path
+    post.update(post_params) 
   end
 
   private
