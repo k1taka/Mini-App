@@ -1,6 +1,11 @@
 <%= form_for(@post) do |f| %>
 
- <%= f.text_field :name,value: @post.name  %>
+<div class="row">
+  <div class="input-field col s6">
+    <%= f.text_field :name,value: @post.name  %>
+    <label class="active" for="first_name2"></label>
+  </div>
+</div>
 
   <div class="row">
   <div class="input-field col s6">
@@ -15,7 +20,12 @@
       <label for="textarea1"></label>
     </div>
   </div>
+  
+  <div class="row">
+    <div class="input-field col s6">
+      <%= f.submit %>
+    </div>
+  </div>
 
-  <%= f.submit %>
-        
+
 <% end %>
